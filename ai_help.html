@@ -1,0 +1,287 @@
+<!-- AI 智能答疑中心 (三栏式消息布局) -->
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI 智能答疑中心 - StudyWithMe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F98C53",
+                        "background-light": "#f8f6f5", 
+                        "background-dark": "#23160f",
+                        "warm-canvas": "#F9F2EF",
+                        // Original page colors
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c201a",
+                        "border-light": "#f1e8e4",
+                        "border-dark": "#3a2d26",
+                        "text-main": "#1c120d",
+                        "text-secondary": "#9d6648",
+                        "brand": {
+                            "background": "#F9F2EF",
+                            "primary": "#F98C53",
+                            "text": "#4A4A4A",
+                            "muted": "#8E8E8E"
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(249, 140, 83, 0.15)',
+                        'card': '0 2px 10px rgba(28, 18, 13, 0.03)',
+                    }
+                },
+            },
+        }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9d7ce;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4bbae;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #3a2d26;
+        }
+        main .overflow-y-auto::-webkit-scrollbar {
+            width: 6px;
+        }
+        main .overflow-y-auto::-webkit-scrollbar-thumb {
+            background: #E5DCD8;
+            border-radius: 10px;
+        }
+</style>
+</head>
+<body class="bg-warm-canvas dark:bg-background-dark text-[#1c120d] dark:text-[#f8f6f5] flex h-screen overflow-hidden font-body selection:bg-primary/30">
+
+<aside class="w-64 bg-white/60 dark:bg-[#2a1d16]/60 border-r border-[#e9d7ce] dark:border-[#3a261c] flex flex-col shrink-0 z-20 backdrop-blur-md transition-all duration-300">
+<div class="h-20 flex items-center px-8">
+<div class="flex flex-col">
+<h1 class="font-display text-xl font-bold text-[#1c120d] dark:text-white tracking-tight">StudyWithMe</h1>
+<p class="text-[#9d6648] text-xs mt-0.5">Mobile-first WebApp</p>
+</div>
+</div>
+<nav class="flex-1 px-3 py-6 flex flex-col gap-3">
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="match_home.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">home</span>
+<span class="font-medium">首页</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="toolbox.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="font-medium">工具箱</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-[#f4ebe7] dark:bg-primary/20 text-[#1c120d] dark:text-white group transition-colors relative" href="ai_help.html">
+<span class="material-symbols-outlined fill text-primary dark:text-primary">chat_bubble</span>
+<span class="font-medium">消息</span>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full"></div>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="profile.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">person</span>
+<span class="font-medium">我的</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
+<div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Chen</p>
+<p class="text-xs text-[#9d6648]">专注时长: 42h</p>
+</div>
+</div>
+</div>
+</aside>
+<section class="w-[280px] hidden lg:flex flex-col border-r border-border-light dark:border-border-dark bg-white/40 dark:bg-surface-dark/40 backdrop-blur-sm h-full transition-all duration-300 shrink-0">
+<div class="h-20 flex items-center px-6 border-b border-border-light dark:border-border-dark shrink-0">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-background-light/50 dark:bg-background-dark/50 border-none rounded-xl text-sm placeholder:text-text-secondary/60 focus:ring-1 focus:ring-primary/30" placeholder="搜索联系人..." type="text"/>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-4 px-3 space-y-2">
+<!-- AI Assistant (Active) -->
+<a href="ai_help.html" class="flex items-center gap-3 p-3 rounded-2xl bg-white dark:bg-surface-dark shadow-sm border border-border-light dark:border-border-dark cursor-pointer transition-all group">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary/20 to-primary/40 flex items-center justify-center border-2 border-white dark:border-surface-dark shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-primary text-3xl fill">smart_toy</span>
+</div>
+<div class="absolute bottom-0.5 right-0.5 h-3 w-3 bg-blue-400 rounded-full border-2 border-white dark:border-surface-dark"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-sm font-bold text-text-main dark:text-white truncate">AI 助教</h3>
+<span class="text-[10px] text-text-secondary">刚刚</span>
+</div>
+<p class="text-xs text-primary truncate">需要解释一下这个概念吗？</p>
+</div>
+</a>
+
+<!-- Professor Sarah -->
+<a href="messages.html" class="flex items-center gap-3 p-3 rounded-2xl hover:bg-white/60 dark:hover:bg-white/5 cursor-pointer transition-all group">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-center bg-cover border-2 border-white dark:border-surface-dark shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFf0owWx3tmMHrfD381pCD2e5MSoWjbXXKF5_sVxToA4qjQjF-gph5wAkq_nZV7Dh1INcsrArujExz70DBixtmSW9gCQNiTSuykOT3Ni5H870zQz2H6bCnmS8wcI9M6AGkONMRzouEm3a2-CDWZC8G7b0W6ipJFZlBMCdpIBxn3riAsiGeVGbFiLwtaf4-1gfoWE30p4awkzAtqSmoXhIAGL9traRlVgdPbI43S5lppBtgyBac4LfONEz2ybHxYaoW_6YmKdtx4f4");'></div>
+<div class="absolute bottom-0.5 right-0.5 h-3 w-3 bg-green-500 rounded-full border-2 border-white dark:border-surface-dark"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-sm font-bold text-text-main dark:text-white truncate">莎拉教授</h3>
+<span class="text-[10px] text-text-secondary font-medium">上午 9:45</span>
+</div>
+<p class="text-xs text-text-secondary truncate">谢谢教授！我现在就下载。</p>
+</div>
+</a>
+
+<!-- 最近联系 -->
+<div class="px-3 pt-4 pb-1">
+<p class="text-[10px] font-bold text-text-secondary/60 tracking-widest uppercase">最近联系</p>
+</div>
+
+<div class="flex items-center gap-3 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-all group">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-center bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpkvHLD7y4OiJdy1Ff--0xnxXi2tXzjysmrXXkC1HPOZh-ze-DiVVgaQcxPUhOF6MkEIAxny53mSs1zRX_PH7fZzFzBK80sjkL3YBeGYAdx-gQ_ksXkmD1gpBSLdbkIKPQpSEUe86AanF1iEAM9IC2TYjEZIp99VZQ4b2DvBr25LtexJRwgic6O4X7ai5jqOfVLcp_mlhErJOASXUXmEB-SInmDvLCx6y3HAnOH0Lb1n8RLpB67NYKAFBQusYMMS69dYFmgGdYkuE");'></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-sm font-bold text-text-main dark:text-white truncate">李明 (学伴)</h3>
+<span class="text-[10px] text-text-secondary">昨天</span>
+</div>
+<p class="text-xs text-text-secondary truncate">我们要一起讨论那个代数问题吗？</p>
+</div>
+</div>
+
+<div class="flex items-center gap-3 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-all group">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-center bg-cover bg-stone-300 flex items-center justify-center text-stone-500 font-bold text-lg">W</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-sm font-bold text-text-main dark:text-white truncate">英语写作小组</h3>
+<span class="text-[10px] text-text-secondary">周三</span>
+</div>
+<p class="text-xs text-text-secondary truncate">王五: 我已经上传了我的初稿。</p>
+</div>
+</div>
+
+<div class="flex items-center gap-3 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-all group">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-center bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCt52usca3GdBFOrd8Vk6fUi8snURR-E8H4Pc0orRqg3H1XPRGh1DlPkXl0zLRPTJRKv3SvfmOm42L7tW6AFYQnIY2Qf7HKQFqpEGjDSDSL0-JpS8dIFEZsXWlfLpsbakRGVvRMn5MkoQcUwCs3nFagOC2ZHPrCU0idTkWSDM2GH2J6BSyHgcDomr6_wa2JsWUveLUbVAmnCg8PtXj1b07NMIhBe4RsKNlnE_1eu6orMfgOQUjDxApx-sxzGhF4BjN0D8xSM_QcgHo");'></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-sm font-bold text-text-main dark:text-white truncate">张老师</h3>
+<span class="text-[10px] text-text-secondary">周二</span>
+</div>
+<p class="text-xs text-text-secondary truncate">记得检查作业中的错误。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Main Chat Content -->
+<main class="flex-1 flex flex-col h-full min-w-0 bg-background-light dark:bg-background-dark relative">
+<header class="h-20 flex-none border-b border-border-light dark:border-border-dark bg-surface-light/80 dark:bg-surface-dark/90 backdrop-blur-md z-10 sticky top-0 px-8 py-3 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 -ml-2 text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary/20 to-primary/40 flex items-center justify-center border-2 border-white dark:border-surface-dark shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-primary text-3xl fill">smart_toy</span>
+</div>
+<div class="absolute bottom-0 right-0 h-3 w-3 bg-blue-400 rounded-full border-2 border-white dark:border-surface-dark"></div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">守护精灵</h2>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-text-secondary dark:text-gray-400 text-xs font-medium tracking-tight">AI 智能答疑中...</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="清除上下文" class="flex items-center justify-center rounded-xl h-10 w-10 hover:bg-border-light dark:hover:bg-border-dark text-text-main dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+<button aria-label="设置" class="flex items-center justify-center rounded-xl h-10 w-10 hover:bg-border-light dark:hover:bg-border-dark text-text-main dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+</header>
+
+<div class="flex-1 overflow-y-auto px-8 py-10 space-y-10 scroll-smooth" id="chat-container">
+
+<div class="flex items-start gap-4 max-w-2xl">
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary/20 to-primary/40 flex items-center justify-center border-2 border-white dark:border-surface-dark shadow-sm overflow-hidden shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl fill">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1.5 items-start">
+<div class="p-5 rounded-3xl rounded-tl-none bg-surface-light dark:bg-surface-dark shadow-sm border border-transparent dark:border-border-dark text-text-main dark:text-gray-100 text-[15px] leading-relaxed">
+<p class="chat-bubble-text">你好呀！我是你的学习守护精灵。🌱</p>
+<p class="mt-2 chat-bubble-text">有什么不懂的题目或者学习上的困惑，都可以随时问我哦。支持上传图片，我会尽全力帮你解答！</p>
+</div>
+<div class="flex flex-wrap gap-2 mt-3">
+<button class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs text-text-secondary dark:text-text-sub-dark hover:border-primary hover:text-primary transition-all shadow-sm">介绍一下督学服务</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs text-text-secondary dark:text-text-sub-dark hover:border-primary hover:text-primary transition-all shadow-sm">制定今日计划</button>
+</div>
+</div>
+</div>
+
+<div class="flex items-start gap-4 justify-end w-full">
+<div class="flex flex-col gap-1.5 items-end max-w-2xl">
+<div class="p-5 rounded-3xl rounded-tr-none bg-[#f98d53] shadow-sm text-[15px] leading-relaxed font-medium text-white">
+                        介绍一下督学服务
+                    </div>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+</div>
+</div>
+
+<div class="flex-none p-8 bg-surface-light/50 dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
+<div class="max-w-5xl mx-auto flex items-end gap-4">
+<button class="p-3 text-text-secondary dark:text-gray-400 hover:text-primary transition-colors rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined text-2xl">add_circle</span>
+</button>
+<div class="flex-1 bg-surface-light dark:bg-background-dark rounded-[24px] flex items-center p-2.5 shadow-sm border border-border-light dark:border-border-dark focus-within:border-primary/50 focus-within:ring-4 focus-within:ring-primary/10 transition-all">
+<button class="p-2.5 text-text-secondary dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">sentiment_satisfied</span>
+</button>
+<textarea class="w-full bg-transparent border-none text-text-main dark:text-white placeholder-text-secondary/50 dark:placeholder-gray-500 focus:ring-0 resize-none py-3.5 px-3 max-h-40 text-[15px] leading-relaxed" placeholder="描述你的问题，或者上传题目图片..." rows="1" style="min-height: 52px;"></textarea>
+<button class="p-2.5 text-text-secondary dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">mic</span>
+</button>
+</div>
+<button class="h-14 w-14 rounded-2xl bg-[#f98d53] hover:bg-[#ff9e66] flex items-center justify-center shadow-lg hover:shadow-orange-500/20 transition-all transform active:scale-95 text-white">
+<span class="material-symbols-outlined font-bold text-[24px]">send</span>
+</button>
+</div>
+<div class="text-center mt-3">
+<p class="text-[11px] text-text-secondary/60 dark:text-gray-500 font-medium tracking-wider uppercase">按 Enter 发送，Shift + Enter 换行</p>
+</div>
+</div>
+</main>
+</body>
+</html>

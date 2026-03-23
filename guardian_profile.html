@@ -1,0 +1,330 @@
+<!-- 学习守护者资料页 -->
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudyWithMe - 学习守护者</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F98C53",
+                        "background-light": "#f8f6f5", 
+                        "background-dark": "#23160f",
+                        "warm-canvas": "#F9F2EF",
+                        // Original page colors
+                        "secondary": "#ABD7FB",
+                        "page-bg": "#F9F2EF",
+                        "text-main": "#1c120d",
+                        "text-secondary": "#9d6648",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(249, 140, 83, 0.15)',
+                        'card': '0 2px 10px rgba(28, 18, 13, 0.03)',
+                    }
+                },
+            },
+        }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9d7ce;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4bbae;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        div.flex-1::-webkit-scrollbar {
+          width: 6px;
+        }
+        div.flex-1::-webkit-scrollbar-thumb {
+          background: #E5DCD8;
+          border-radius: 10px;
+        }
+</style>
+</head>
+<body class="bg-warm-canvas dark:bg-background-dark text-[#1c120d] dark:text-[#f8f6f5] flex h-screen overflow-hidden font-body selection:bg-primary/30">
+
+<aside class="w-64 bg-white/60 dark:bg-[#2a1d16]/60 border-r border-[#e9d7ce] dark:border-[#3a261c] flex flex-col shrink-0 z-20 backdrop-blur-md transition-all duration-300">
+<div class="h-20 flex items-center px-8">
+<div class="flex flex-col">
+<h1 class="font-display text-xl font-bold text-[#1c120d] dark:text-white tracking-tight">StudyWithMe</h1>
+<p class="text-[#9d6648] text-xs mt-0.5">Mobile-first WebApp</p>
+</div>
+</div>
+<nav class="flex-1 px-3 py-6 flex flex-col gap-3">
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-[#f4ebe7] dark:bg-primary/20 text-[#1c120d] dark:text-white group transition-colors relative" href="match_home.html">
+<span class="material-symbols-outlined fill text-primary dark:text-primary">home</span>
+<span class="font-medium">首页</span>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full"></div>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="toolbox.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="font-medium">工具箱</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="ai_help.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="font-medium">消息</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="profile.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">person</span>
+<span class="font-medium">我的</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
+<div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Chen</p>
+<p class="text-xs text-[#9d6648]">专注时长: 42h</p>
+</div>
+</div>
+</div>
+</aside>
+
+<div class="flex-1 overflow-y-auto p-10">
+<div class="mx-auto">
+
+<div class="flex gap-2 text-sm mb-6">
+<a class="text-[#9d6648] hover:text-primary" href="match_home.html">首页</a>
+<span class="text-[#9d6648]">/</span>
+<a class="text-[#9d6648] hover:text-primary" href="ai_match.html">寻找守护者</a>
+<span class="text-[#9d6648]">/</span>
+<span class="font-bold">莎拉·詹金斯</span>
+</div>
+
+<div class="grid grid-cols-12 gap-8">
+<aside class="col-span-4 flex flex-col gap-6">
+<div class="bg-white rounded-2xl p-8 relative">
+<div class="absolute top-4 right-4 flex items-center gap-1.5 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-bold">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>在线
+</div>
+<div class="relative flex justify-center mb-6">
+<div class="w-36 h-36 rounded-full bg-cover bg-center border-4 border-white shadow-md" style="background-image: url('https://picsum.photos/400/400')"></div>
+<div class="absolute bottom-1 right-1 bg-secondary text-white p-1 rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+</div>
+<h1 class="text-2xl font-bold text-center mb-1">莎拉·詹金斯</h1>
+<p class="text-[#9d6648] text-sm text-center mb-5">物理学博士候选人</p>
+<div class="flex justify-center gap-1 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">school</span>
+<span>哈佛大学</span>
+</div>
+<div class="flex justify-between pt-6 border-t border-[#f4ebe7] mb-8">
+<div class="text-center flex-1 border-r border-[#f4ebe7]">
+<p class="text-2xl font-bold">¥180</p>
+<p class="text-xs text-[#9d6648] uppercase">时薪</p>
+</div>
+<div class="text-center flex-1">
+<div class="flex items-center justify-center gap-1">
+<span class="text-2xl font-bold">4.9</span>
+<span class="material-symbols-outlined text-amber-400 fill">star</span>
+</div>
+<p class="text-xs text-[#9d6648] uppercase">评分</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-[#e67a3f] text-white font-bold py-4 rounded-xl shadow flex items-center justify-center gap-2 transition-colors">
+<span>立即连线</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full mt-3 border border-[#e9d7ce] py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-colors hover:bg-page-bg">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+<span>发私信</span>
+</button>
+</div>
+
+<div class="bg-white rounded-2xl p-6">
+<h3 class="text-sm font-bold uppercase tracking-wider mb-5">守护数据</h3>
+<div class="flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-[#fdf2eb] p-2.5 rounded-lg text-primary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+</div>
+<span class="text-sm font-medium">督学时长</span>
+</div>
+<span class="font-bold">500+</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-[#fdf2eb] p-2.5 rounded-lg text-primary">
+<span class="material-symbols-outlined text-sm">group</span>
+</div>
+<span class="text-sm font-medium">辅导学生</span>
+</div>
+<span class="font-bold">42</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-[#fdf2eb] p-2.5 rounded-lg text-primary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+</div>
+<span class="text-sm font-medium">完成率</span>
+</div>
+<span class="font-bold">98%</span>
+</div>
+</div>
+</div>
+</aside>
+
+<main class="col-span-8 flex flex-col gap-6">
+<div class="bg-white rounded-2xl p-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">person</span>
+<h2 class="text-xl font-bold">个人简介</h2>
+</div>
+<div class="text-[#5c4033] leading-relaxed">
+<p class="mb-5">你好！我是莎拉，目前正在攻读物理学博士学位，主攻量子力学。我有超过4年的理工科本科生学习督导经验。</p>
+<p class="mb-5">我的督导风格既有条理又充满鼓励。我擅长使用<strong>番茄工作法</strong>和<strong>深度工作</strong>方法论，帮助你打破拖延症，尤其是在处理复杂的习题集或论文写作时。</p>
+<p>我不仅仅是看着你学习；我会帮助你制定计划，设定切实可行的微目标，并监督你完成。让我们把那堆压得人喘不过气的工作变成已完成清单！</p>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl p-10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary text-2xl">tips_and_updates</span>
+<h2 class="text-xl font-bold">专业领域 & 技能标签</h2>
+</div>
+<div class="mb-8">
+<h4 class="text-sm font-bold text-[#9d6648] uppercase tracking-wide mb-4">擅长科目</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#eaf6ff] text-[#0c4a6e] border border-[#ABD7FB]">物理</span>
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#eaf6ff] text-[#0c4a6e] border border-[#ABD7FB]">微积分 II</span>
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#eaf6ff] text-[#0c4a6e] border border-[#ABD7FB]">线性代数</span>
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#eaf6ff] text-[#0c4a6e] border border-[#ABD7FB]">数据科学</span>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold text-[#9d6648] uppercase tracking-wide mb-4">督学方法</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#fcf9f8] border border-[#e9d7ce]">番茄工作法专家</span>
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#fcf9f8] border border-[#e9d7ce]">心流状态引导</span>
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#fcf9f8] border border-[#e9d7ce]">备考冲刺</span>
+<span class="px-4 py-2 rounded-full text-sm font-medium bg-[#fcf9f8] border border-[#e9d7ce]">论文进度管理</span>
+</div>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl p-10">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">calendar_month</span>
+<h2 class="text-xl font-bold">近期可预约时间</h2>
+</div>
+<a class="text-primary text-sm font-bold hover:underline">查看完整日历</a>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="border border-[#e9d7ce] rounded-xl p-5 text-center bg-[#fcf9f8]">
+<p class="text-xs text-[#9d6648] font-bold uppercase mb-1">今天</p>
+<p class="text-lg font-bold mb-4">10月24日</p>
+<div class="space-y-2">
+<div class="text-xs bg-primary/10 text-primary py-1.5 rounded font-bold">14:00</div>
+<div class="text-xs bg-primary/10 text-primary py-1.5 rounded font-bold">16:30</div>
+</div>
+</div>
+<div class="border border-[#e9d7ce] rounded-xl p-5 text-center">
+<p class="text-xs text-[#9d6648] font-bold uppercase mb-1">明天</p>
+<p class="text-lg font-bold mb-4">10月25日</p>
+<div class="space-y-2">
+<div class="text-xs bg-green-100 text-green-700 py-1.5 rounded font-bold">09:00</div>
+<div class="text-xs bg-green-100 text-green-700 py-1.5 rounded font-bold">11:00</div>
+</div>
+</div>
+<div class="border border-[#e9d7ce] rounded-xl p-5 text-center bg-gray-50/50">
+<p class="text-xs text-[#9d6648] font-bold uppercase mb-1">周六</p>
+<p class="text-lg font-bold mb-4">10月26日</p>
+<div class="space-y-2">
+<div class="text-xs bg-gray-100 text-gray-400 py-1.5 rounded font-medium">已约满</div>
+</div>
+</div>
+<div class="border border-[#e9d7ce] rounded-xl p-5 text-center">
+<p class="text-xs text-[#9d6648] font-bold uppercase mb-1">周日</p>
+<p class="text-lg font-bold mb-4">10月27日</p>
+<div class="space-y-2">
+<div class="text-xs bg-green-100 text-green-700 py-1.5 rounded font-bold">13:00</div>
+<div class="text-xs bg-green-100 text-green-700 py-1.5 rounded font-bold">15:00</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl p-10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary text-2xl">stars</span>
+<h2 class="text-xl font-bold">学生评价 (128)</h2>
+</div>
+<div class="flex flex-col gap-8">
+<div class="border-b border-[#f4ebe7] pb-8">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style="background-image: url('https://picsum.photos/100/100?1')"></div>
+<div>
+<p class="text-base font-bold">亚历克斯·汤普森</p>
+<p class="text-xs text-[#9d6648]">工程系学生</p>
+</div>
+</div>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+</div>
+</div>
+<p class="text-[#5c4033] text-sm leading-relaxed mb-3">莎拉帮我通过了期末考试！她非常有耐心，而且真的懂得如何深入浅出地解释复杂的物理概念。番茄钟学习法让我连续专注了3个小时。</p>
+<p class="text-xs text-[#9d6648]">2023年10月20日</p>
+</div>
+<div class="border-b border-[#f4ebe7] pb-8">
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style="background-image: url('https://picsum.photos/100/100?2')"></div>
+<div>
+<p class="text-base font-bold">玛丽亚·罗德里格斯</p>
+<p class="text-xs text-[#9d6648]">生物专业</p>
+</div>
+</div>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star_half</span>
+</div>
+</div>
+<p class="text-[#5c4033] text-sm leading-relaxed mb-3">强烈推荐给任何在写论文时感到挣扎的人。她的进度管理体系非常棒。</p>
+<p class="text-xs text-[#9d6648]">2023年9月14日</p>
+</div>
+</div>
+<button class="w-full mt-8 py-3 text-sm font-bold text-primary border border-primary/30 rounded-xl hover:bg-primary/5 transition-colors">查看更多评价</button>
+</main>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!-- 我的学习数据 - 累计 -->
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudyWithMe - 我的学习数据 - 累计</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F98C53",
+                        "background-light": "#f8f6f5", 
+                        "background-dark": "#23160f",
+                        "warm-canvas": "#F9F2EF",
+                        "surface-dark": "#2c201a",
+                        // Colors from original page for content compatibility
+                        brand: {
+                          background: '#F9F2EF',
+                          primary: '#F98C53',
+                          text: '#4A4A4A',
+                          muted: '#8E8E8E'
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(249, 140, 83, 0.15)',
+                        'card': '0 2px 10px rgba(28, 18, 13, 0.03)',
+                    }
+                },
+            },
+        }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9d7ce;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4bbae;
+        }
+        /* Styles from original page */
+        .white-card {
+          background: #FFFFFF;
+          border-radius: 24px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+</style>
+</head>
+<body class="bg-warm-canvas dark:bg-background-dark text-[#1c120d] dark:text-[#f8f6f5] flex h-screen overflow-hidden font-body selection:bg-primary/30">
+
+<aside class="w-64 bg-white/60 dark:bg-[#2a1d16]/60 border-r border-[#e9d7ce] dark:border-[#3a261c] flex flex-col shrink-0 z-20 backdrop-blur-md transition-all duration-300">
+<div class="h-20 flex items-center px-8">
+<div class="flex flex-col">
+<h1 class="font-display text-xl font-bold text-[#1c120d] dark:text-white tracking-tight">StudyWithMe</h1>
+<p class="text-[#9d6648] text-xs mt-0.5">Mobile-first WebApp</p>
+</div>
+</div>
+<nav class="flex-1 px-3 py-6 flex flex-col gap-3">
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="match_home.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">home</span>
+<span class="font-medium">首页</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="toolbox.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="font-medium">工具箱</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="ai_help.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="font-medium">消息</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-[#f4ebe7] dark:bg-primary/20 text-[#1c120d] dark:text-white group transition-colors relative" href="profile.html">
+<span class="material-symbols-outlined fill text-primary dark:text-primary">person</span>
+<span class="font-medium">我的</span>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full"></div>
+</a>
+</nav>
+<div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
+<div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Chen</p>
+<p class="text-xs text-[#9d6648]">专注时长: 42h</p>
+</div>
+</div>
+</div>
+</aside>
+
+<main class="flex-1 p-12 overflow-y-auto">
+
+<header class="flex justify-between items-end mb-12">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">我的学习数据</h1>
+        <div class="inline-flex items-center bg-white dark:bg-surface-dark p-2 rounded-full shadow-sm mb-3">
+            <a href="data_today.html" class="px-6 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 hover:text-primary">本日</a>
+            <a href="data_week.html" class="px-6 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 hover:text-primary">本周</a>
+            <a href="data_cumulative.html" class="px-6 py-2 text-sm font-semibold text-white bg-primary rounded-full">累计</a>
+        </div>
+        <p class="text-gray-500 dark:text-gray-400 font-medium">记录你的每一次成长，积沙成塔。</p>
+    </div>
+    <div class="text-right">
+        <span class="text-gray-500 dark:text-gray-400 text-sm block mb-1">累计专注时长</span>
+        <span class="text-5xl font-bold text-primary leading-none">1286 <small class="text-xl font-medium">小时</small></span>
+    </div>
+</header>
+
+<div class="grid grid-cols-12 gap-8 mb-8">
+<section class="col-span-8 white-card p-8" data-purpose="effort-distribution">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-bold">学科投入分布</h2>
+<div class="flex items-center space-x-4 text-xs text-brand-muted">
+<span class="flex items-center"><span class="w-3 h-3 bg-brand-primary rounded-full mr-1"></span> 重点投入</span>
+<span class="flex items-center"><span class="w-3 h-3 bg-orange-300 rounded-full mr-1"></span> 持续跟进</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between px-4" id="effort-chart-container">
+<!-- Mock Chart Bars -->
+<div class="flex flex-col items-center group">
+<div class="w-12 bg-orange-100 rounded-t-lg transition-all hover:bg-brand-primary" style="height: 180px;"></div>
+<span class="mt-3 text-sm font-medium">数学</span>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-12 bg-orange-100 rounded-t-lg transition-all hover:bg-brand-primary" style="height: 140px;"></div>
+<span class="mt-3 text-sm font-medium">英语</span>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-12 bg-brand-primary rounded-t-lg transition-all" style="height: 220px;"></div>
+<span class="mt-3 text-sm text-brand-primary font-bold">专业课</span>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-12 bg-orange-100 rounded-t-lg transition-all hover:bg-brand-primary" style="height: 90px;"></div>
+<span class="mt-3 text-sm font-medium">政治</span>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-12 bg-orange-100 rounded-t-lg transition-all hover:bg-brand-primary" style="height: 110px;"></div>
+<span class="mt-3 text-sm font-medium">日语</span>
+</div>
+<div class="flex flex-col items-center group">
+<div class="w-12 bg-orange-100 rounded-t-lg transition-all hover:bg-brand-primary" style="height: 60px;"></div>
+<span class="mt-3 text-sm font-medium">其他</span>
+</div>
+</div>
+</section>
+
+<section class="col-span-4 white-card p-8 flex flex-col justify-between" data-purpose="trend-insights">
+<div>
+<h2 class="text-xl font-bold mb-6">长期趋势洞察</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-brand-primary">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12 7a1 1 0 110-2h5V5a2 2 0 00-2-2h-5a1 1 0 010-2H7a1 1 0 00-2 2H3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2h5a1 1 0 010 2h-5z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="text-sm leading-relaxed text-brand-text">
+                自去年以来，你的专注度提升了 <span class="text-brand-primary font-bold">24%</span>。在专业课领域的持续深耕效果显著。
+              </p>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0 text-brand-primary">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="text-sm leading-relaxed text-brand-text">
+                黄金效率时间集中在 <span class="text-brand-primary font-bold">09:30 - 11:30</span>，建议在此时间段安排高难度攻坚任务。
+              </p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-orange-50 mt-6">
+<p class="text-xs text-brand-muted italic">"不积跬步，无以至千里。"</p>
+</div>
+</section>
+</div>
+
+<section class="white-card p-8" data-purpose="achievements-gallery">
+<h2 class="text-xl font-bold mb-8">荣誉勋章馆</h2>
+<div class="grid grid-cols-6 gap-6">
+<div class="flex flex-col items-center p-4 bg-orange-50 rounded-2xl hover:scale-105 transition-transform">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-3">
+<span class="text-3xl">🔥</span>
+</div>
+<span class="text-sm font-bold">百日战神</span>
+<span class="text-[10px] text-brand-muted mt-1">连续打卡100天</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-orange-50 rounded-2xl hover:scale-105 transition-transform">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-3">
+<span class="text-3xl">🌙</span>
+</div>
+<span class="text-sm font-bold">暗夜行者</span>
+<span class="text-[10px] text-brand-muted mt-1">深度专注超过500h</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-orange-50 rounded-2xl hover:scale-105 transition-transform">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-3">
+<span class="text-3xl">🎓</span>
+</div>
+<span class="text-sm font-bold">知识博主</span>
+<span class="text-[10px] text-brand-muted mt-1">整理笔记超过10万字</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-orange-50 rounded-2xl hover:scale-105 transition-transform">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-3">
+<span class="text-3xl">⏰</span>
+</div>
+<span class="text-sm font-bold">守时达人</span>
+<span class="text-[10px] text-brand-muted mt-1">计划完成率达98%</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-gray-100 rounded-2xl opacity-60">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm filter grayscale">
+<span class="text-3xl">💎</span>
+</div>
+<span class="text-sm font-bold">卓越专家</span>
+<span class="text-[10px] text-brand-muted mt-1">待解锁: 2000小时</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-gray-100 rounded-2xl opacity-60">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm filter grayscale">
+<span class="text-3xl">🚀</span>
+</div>
+<span class="text-sm font-bold">高效标兵</span>
+<span class="text-[10px] text-brand-muted mt-1">待解锁: 全年无间断</span>
+</div>
+</div>
+</section>
+
+<div class="grid grid-cols-3 gap-8 mt-8">
+<div class="white-card p-6 flex items-center space-x-6">
+<div class="text-brand-primary text-4xl font-bold">365</div>
+<div>
+<div class="text-sm font-bold">坚持天数</div>
+<div class="text-xs text-brand-muted">从未缺席过任何一天</div>
+</div>
+</div>
+<div class="white-card p-6 flex items-center space-x-6">
+<div class="text-brand-primary text-4xl font-bold">42</div>
+<div>
+<div class="text-sm font-bold">完成课程</div>
+<div class="text-xs text-brand-muted">累计通过所有测试</div>
+</div>
+</div>
+<div class="white-card p-6 flex items-center space-x-6">
+<div class="text-brand-primary text-4xl font-bold">12k</div>
+<div>
+<div class="text-sm font-bold">记录思考</div>
+<div class="text-xs text-brand-muted">随笔与灵感汇总</div>
+</div>
+</div>
+</div>
+
+</main>
+<canvas class="fixed top-0 left-0 w-full h-full -z-10 opacity-20 pointer-events-none" data-purpose="background-decoration" id="subtle-background"></canvas>
+<script data-purpose="background-canvas-logic">
+    const bgCanvas = document.getElementById('subtle-background');
+    const bgCtx = bgCanvas.getContext('2d');
+    function resize() {
+      bgCanvas.width = window.innerWidth;
+      bgCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    const particles = [];
+    for(let i=0; i<15; i++) {
+      particles.push({
+        x: Math.random() * bgCanvas.width,
+        y: Math.random() * bgCanvas.height,
+        r: Math.random() * 50 + 20,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+    function animate() {
+      bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+      bgCtx.fillStyle = '#F98C53';
+      particles.forEach(p => {
+        bgCtx.beginPath();
+        bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        bgCtx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if(p.x < -p.r) p.x = bgCanvas.width + p.r;
+        if(p.x > bgCanvas.width + p.r) p.x = -p.r;
+        if(p.y < -p.r) p.y = bgCanvas.height + p.r;
+        if(p.y > bgCanvas.height + p.r) p.y = -p.r;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

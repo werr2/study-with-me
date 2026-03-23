@@ -1,0 +1,351 @@
+<!-- 我的学习数据 - 本周 -->
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudyWithMe - 我的学习数据 - 本周</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F98C53",
+                        "background-light": "#f8f6f5", 
+                        "background-dark": "#23160f",
+                        "warm-canvas": "#F9F2EF",
+                        "surface-dark": "#2c201a",
+                        // Original page colors
+                        'healing-bg': '#F9F2EF',
+                        'primary-orange': '#F98C53',
+                        'soft-gray': '#A0A0A0',
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(249, 140, 83, 0.15)',
+                        'card': '0 2px 10px rgba(28, 18, 13, 0.03)',
+                    }
+                },
+            },
+        }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9d7ce;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4bbae;
+        }
+        /* Original Page Styles */
+        .glass-card {
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 24px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+        .progress-bg {
+          background-color: #F1E9E6;
+        }
+</style>
+</head>
+<body class="bg-warm-canvas dark:bg-background-dark text-[#1c120d] dark:text-[#f8f6f5] flex h-screen overflow-hidden font-body selection:bg-primary/30">
+
+<aside class="w-64 bg-white/60 dark:bg-[#2a1d16]/60 border-r border-[#e9d7ce] dark:border-[#3a261c] flex flex-col shrink-0 z-20 backdrop-blur-md transition-all duration-300">
+<div class="h-20 flex items-center px-8">
+<div class="flex flex-col">
+<h1 class="font-display text-xl font-bold text-[#1c120d] dark:text-white tracking-tight">StudyWithMe</h1>
+<p class="text-[#9d6648] text-xs mt-0.5">Mobile-first WebApp</p>
+</div>
+</div>
+<nav class="flex-1 px-3 py-6 flex flex-col gap-3">
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="match_home.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">home</span>
+<span class="font-medium">首页</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="toolbox.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="font-medium">工具箱</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="ai_help.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="font-medium">消息</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-[#f4ebe7] dark:bg-primary/20 text-[#1c120d] dark:text-white group transition-colors relative" href="profile.html">
+<span class="material-symbols-outlined fill text-primary dark:text-primary">person</span>
+<span class="font-medium">我的</span>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full"></div>
+</a>
+</nav>
+<div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
+<div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Chen</p>
+<p class="text-xs text-[#9d6648]">专注时长: 42h</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-12 overflow-y-auto" data-purpose="main-dashboard">
+  <header class="flex justify-between items-end mb-12">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">我的学习数据</h1>
+        <div class="inline-flex items-center bg-white dark:bg-surface-dark p-2 rounded-full shadow-sm mb-3">
+            <a href="data_today.html" class="px-6 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 hover:text-primary">本日</a>
+            <a href="data_week.html" class="px-6 py-2 text-sm font-semibold text-white bg-primary rounded-full">本周</a>
+            <a href="data_cumulative.html" class="px-6 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 hover:text-primary">累计</a>
+        </div>
+        <p class="text-gray-500 dark:text-gray-400 font-medium">Monday, Oct 23 - Sunday, Oct 29</p>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="px-6 py-3 bg-white text-primary-orange font-semibold rounded-2xl shadow-sm hover:shadow-md transition-all border border-orange-100">导出数据</button>
+        <button class="px-6 py-3 bg-primary-orange text-white font-semibold rounded-2xl shadow-lg shadow-orange-200 hover:scale-105 transition-all">添加记录</button>
+    </div>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-8 flex flex-col gap-8">
+<div class="glass-card p-8 flex items-center justify-between" data-purpose="summary-card">
+<div class="flex flex-col">
+<span class="text-gray-500 text-sm font-medium uppercase tracking-wider mb-1">本周总专注时长</span>
+<div class="flex items-baseline gap-2">
+<span class="text-6xl font-bold text-primary-orange">42</span>
+<span class="text-2xl font-medium text-gray-400">小时</span>
+</div>
+</div>
+<div class="h-16 w-px bg-orange-100"></div>
+<div class="flex flex-col">
+<span class="text-gray-500 text-sm font-medium uppercase tracking-wider mb-1">较上周</span>
+<div class="flex items-center text-green-500 font-bold text-xl">
+<svg class="h-6 w-6 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              +15%
+            </div>
+</div>
+<div class="h-16 w-px bg-orange-100"></div>
+<div class="flex flex-col">
+<span class="text-gray-500 text-sm font-medium uppercase tracking-wider mb-1">全站排名</span>
+<span class="text-2xl font-bold text-gray-700">Top 5%</span>
+</div>
+</div>
+<div class="glass-card p-8 flex-1" data-purpose="chart-container">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold text-gray-800">学习趋势</h3>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-xs font-medium text-gray-500">
+<span class="w-3 h-3 rounded-full bg-primary-orange"></span> 本周
+              </span>
+<span class="flex items-center gap-1.5 text-xs font-medium text-gray-500">
+<span class="w-3 h-3 rounded-full bg-orange-200"></span> 上周
+              </span>
+</div>
+</div>
+<div class="relative h-80">
+<canvas height="480" id="weeklyChart" width="976"></canvas>
+</div>
+</div>
+</div>
+<div class="col-span-4 flex flex-col gap-8">
+<div class="glass-card p-8 h-full" data-purpose="okr-section">
+<h3 class="text-xl font-bold text-gray-800 mb-8">本周进度</h3>
+<div class="space-y-10">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-bold text-gray-700 text-lg">考研专业课精读</span>
+<span class="text-primary-orange font-bold text-lg">85%</span>
+</div>
+<div class="w-full h-3 progress-bg rounded-full overflow-hidden">
+<div class="h-full bg-primary-orange rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-sm text-gray-400 font-medium">已完成 17/20 章节</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-bold text-gray-700 text-lg">英语单词记忆 (2000词)</span>
+<span class="text-primary-orange font-bold text-lg">60%</span>
+</div>
+<div class="w-full h-3 progress-bg rounded-full overflow-hidden">
+<div class="h-full bg-primary-orange rounded-full" style="width: 60%"></div>
+</div>
+<p class="text-sm text-gray-400 font-medium">已完成 1200/2000 词</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-bold text-gray-700 text-lg">数学模拟真题</span>
+<span class="text-primary-orange font-bold text-lg">40%</span>
+</div>
+<div class="w-full h-3 progress-bg rounded-full overflow-hidden">
+<div class="h-full bg-primary-orange rounded-full" style="width: 40%"></div>
+</div>
+<p class="text-sm text-gray-400 font-medium">已完成 2/5 套</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="font-bold text-gray-700 text-lg">算法刷题精解</span>
+<span class="text-primary-orange font-bold text-lg">92%</span>
+</div>
+<div class="w-full h-3 progress-bg rounded-full overflow-hidden">
+<div class="h-full bg-primary-orange rounded-full" style="width: 92%"></div>
+</div>
+<p class="text-sm text-gray-400 font-medium">已完成 23/25 题</p>
+</div>
+</div>
+<div class="mt-12 p-6 bg-orange-50 rounded-3xl border border-orange-100 flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary-orange shadow-sm">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-800">继续保持！</p>
+<p class="text-xs text-gray-500 mt-1">你本周的效率比 95% 的用户都高。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script data-purpose="chart-setup">
+    const ctx = document.getElementById('weeklyChart').getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+    gradient.addColorStop(0, 'rgba(249, 140, 83, 0.4)');
+    gradient.addColorStop(1, 'rgba(249, 140, 83, 0.0)');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: '本周时长',
+          data: [5.5, 6.8, 4.2, 7.5, 6.0, 5.0, 7.0],
+          borderColor: '#F98C53',
+          borderWidth: 4,
+          pointBackgroundColor: '#FFFFFF',
+          pointBorderColor: '#F98C53',
+          pointBorderWidth: 3,
+          pointRadius: 6,
+          pointHoverRadius: 8,
+          backgroundColor: gradient,
+          fill: true,
+          tension: 0.4
+        },
+        {
+          label: '上周时长',
+          data: [4.0, 5.0, 5.5, 4.8, 5.2, 4.5, 5.0],
+          borderColor: '#F98C53',
+          borderWidth: 2,
+          borderDash: [5, 5],
+          pointRadius: 0,
+          backgroundColor: 'transparent',
+          fill: false,
+          tension: 0.4,
+          opacity: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: '#FFF',
+            titleColor: '#333',
+            bodyColor: '#F98C53',
+            bodyFont: { weight: 'bold' },
+            padding: 12,
+            borderColor: '#F1E9E6',
+            borderWidth: 1,
+            displayColors: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: '#F1E9E6',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#A0A0A0',
+              font: {
+                size: 12
+              },
+              callback: function(value) {
+                return value + 'h';
+              }
+            }
+          },
+          x: {
+            grid: {
+              display: false
+            },
+            ticks: {
+              color: '#A0A0A0',
+              font: {
+                size: 12,
+                weight: 'bold'
+              }
+            }
+          }
+        }
+      }
+    });
+</script>
+<canvas class="fixed top-0 left-0 w-full h-full -z-10 opacity-20 pointer-events-none" data-purpose="background-decoration" id="subtle-background"></canvas>
+<script data-purpose="background-canvas-logic">
+    const bgCanvas = document.getElementById('subtle-background');
+    const bgCtx = bgCanvas.getContext('2d');
+    function resize() {
+      bgCanvas.width = window.innerWidth;
+      bgCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    const particles = [];
+    for(let i=0; i<15; i++) {
+      particles.push({
+        x: Math.random() * bgCanvas.width,
+        y: Math.random() * bgCanvas.height,
+        r: Math.random() * 50 + 20,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+    function animate() {
+      bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+      bgCtx.fillStyle = '#F98C53';
+      particles.forEach(p => {
+        bgCtx.beginPath();
+        bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        bgCtx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if(p.x < -p.r) p.x = bgCanvas.width + p.r;
+        if(p.x > bgCanvas.width + p.r) p.x = -p.r;
+        if(p.y < -p.r) p.y = bgCanvas.height + p.r;
+        if(p.y > bgCanvas.height + p.r) p.y = -p.r;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>

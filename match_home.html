@@ -1,0 +1,189 @@
+<!-- StudyWithMe 匹配首页 -->
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudyWithMe - Find Your Focus Buddy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#F98C53",
+                        "background-light": "#f8f6f5", 
+                        "background-dark": "#23160f",
+                        "warm-canvas": "#F9F2EF",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(249, 140, 83, 0.15)',
+                        'card': '0 2px 10px rgba(28, 18, 13, 0.03)',
+                    }
+                },
+            },
+        }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e9d7ce;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4bbae;
+        }
+        .study-buddy-card.selected {
+            border-color: #F98C53; /* primary color */
+            box-shadow: 0 0 0 4px rgba(249, 140, 83, 0.2);
+            transform: translateY(-2px);
+        }
+</style>
+</head>
+<body class="bg-warm-canvas dark:bg-background-dark text-[#1c120d] dark:text-[#f8f6f5] flex h-screen overflow-hidden font-body selection:bg-primary/30">
+
+<aside class="w-64 bg-white/60 dark:bg-[#2a1d16]/60 border-r border-[#e9d7ce] dark:border-[#3a261c] flex flex-col shrink-0 z-20 backdrop-blur-md transition-all duration-300">
+<div class="h-20 flex items-center px-8">
+<div class="flex flex-col">
+<h1 class="font-display text-xl font-bold text-[#1c120d] dark:text-white tracking-tight">StudyWithMe</h1>
+<p class="text-[#9d6648] text-xs mt-0.5">Mobile-first WebApp</p>
+</div>
+</div>
+<nav class="flex-1 px-3 py-6 flex flex-col gap-3">
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl bg-[#f4ebe7] dark:bg-primary/20 text-[#1c120d] dark:text-white group transition-colors relative" href="match_home.html">
+<span class="material-symbols-outlined fill text-primary dark:text-primary">home</span>
+<span class="font-medium">首页</span>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full"></div>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="toolbox.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">grid_view</span>
+<span class="font-medium">工具箱</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="ai_help.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="font-medium">消息</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-xl hover:bg-white/50 dark:hover:bg-white/5 text-[#5e4033] dark:text-[#d0c0b6] transition-colors group" href="profile.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">person</span>
+<span class="font-medium">我的</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
+<div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Chen</p>
+<p class="text-xs text-[#9d6648]">专注时长: 42h</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- 核心修改1：main标签新增w-full h-full，移除不必要的重复属性 -->
+<main class="flex-1 flex flex-col relative w-full h-full">
+<!-- 核心修改2：header移除max-w-[1200px]限制，改为w-full -->
+<header class="px-12 pt-8 pb-0 bg-warm-canvas dark:bg-background-dark z-10 sticky top-0">
+<div class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div class="flex gap-8 border-b border-[#e9d7ce]/50 dark:border-white/10 w-full">
+<a class="relative pb-4 px-2 group" href="#">
+<span class="font-display font-bold text-lg text-[#9d6648] dark:text-[#a08d84] group-hover:text-primary transition-colors">找学伴</span>
+</a>
+<a class="relative pb-4 px-2 group" href="#">
+<span class="font-display font-bold text-lg text-[#1c120d] dark:text-white group-hover:text-primary transition-colors">找守护者</span>
+<div class="absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-t-full"></div>
+</a>
+</div>
+</div>
+</header>
+<!-- 核心修改3：滚动容器移除max-w-[1200px]限制，改为w-full -->
+<div class="flex-1 overflow-y-auto px-12 pb-32" id="main-scroll">
+<div class="w-full py-6">
+<div class="flex flex-col md:flex-row gap-4 mb-8">
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#9d6648] group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3.5 bg-white dark:bg-[#2a1d16] border-none rounded-xl text-[#1c120d] dark:text-white placeholder-[#9d6648]/60 focus:ring-2 focus:ring-primary/50 shadow-card hover:shadow-soft transition-all" placeholder="搜索目标、专业、或者学习习惯..." type="text"/>
+</div>
+<a class="flex items-center justify-center gap-2 px-6 py-3.5 bg-white dark:bg-[#2a1d16] rounded-xl text-primary font-bold shadow-soft border border-transparent hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all group min-w-[160px]" href="ai_match.html">
+<span class="material-symbols-outlined fill text-[20px] group-hover:animate-pulse">auto_awesome</span>
+<span>AI 精准匹配</span>
+</a>
+</div>
+<div class="flex flex-wrap gap-3 mb-8 items-center">
+<span class="text-xs font-bold text-[#9d6648] uppercase tracking-wider mr-2 hidden md:block">筛选:</span>
+<button class="h-9 px-5 rounded-xl bg-primary text-[#1c120d] font-medium text-sm shadow-soft hover:shadow-md hover:-translate-y-0.5 transition-all">全部</button>
+<button class="h-9 px-5 rounded-xl bg-white dark:bg-[#2a1d16] text-[#5e4033] dark:text-[#d0c0b6] border border-transparent hover:border-[#e9d7ce] font-medium text-sm shadow-card hover:shadow-md hover:-translate-y-0.5 transition-all">考研党</button>
+<button class="h-9 px-5 rounded-xl bg-white dark:bg-[#2a1d16] text-[#5e4033] dark:text-[#d0c0b6] border border-transparent hover:border-[#e9d7ce] font-medium text-sm shadow-card hover:shadow-md hover:-translate-y-0.5 transition-all">在职备考</button>
+<button class="h-9 px-5 rounded-xl bg-white dark:bg-[#2a1d16] text-[#5e4033] dark:text-[#d0c0b6] border border-transparent hover:border-[#e9d7ce] font-medium text-sm shadow-card hover:shadow-md hover:-translate-y-0.5 transition-all">留学语言</button>
+<button class="h-9 px-5 rounded-xl bg-white dark:bg-[#2a1d16] text-[#5e4033] dark:text-[#d0c0b6] border border-transparent hover:border-[#e9d7ce] font-medium text-sm shadow-card hover:shadow-md hover:-translate-y-0.5 transition-all">早起打卡</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Study buddy card -->
+<div class="study-buddy-card bg-white dark:bg-[#2a1d16] rounded-2xl p-6 flex flex-col items-center text-center shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer border-2 border-transparent hover:border-primary/20 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#f98d53] to-[#ffb088] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full bg-cover bg-center shadow-md group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj3hFER-pG05f9AN7hP2DSO2x3xgBhTQXCcCla_vU4D_lWIPuumAX2AkaJqSh151UUY5gx6elGy-nkMh8v1GQVaTf93n6VH4A3KgYS9ZYVoVE6JQY9GmOioEygaud2utCJKMH66dUGET0eHwjdHW53gPAGN6lIswz94r-xZgh2M1TCVbHwgIEaFU6GRWPwVEj2fqs6DMhB9DGFmx9_-aPetJjpkDRRMMpnUq1yGb13Uh7oL_mT9pdkLdBYiE9v785fgNkgcg4Vx3s')"></div>
+<div class="absolute bottom-0 right-0 w-6 h-6 bg-green-400 border-[3px] border-white dark:border-[#2a1d16] rounded-full"></div>
+</div>
+<h3 class="font-display text-lg font-bold text-[#1c120d] dark:text-white mb-1">数学大神</h3>
+<p class="text-xs text-[#9d6648] font-medium mb-3 bg-[#fdf2eb] dark:bg-primary/10 px-2 py-1 rounded-md">今日攻克线性代数</p>
+<div class="flex flex-wrap justify-center gap-2 mb-4 w-full">
+<span class="text-[10px] font-medium text-[#5e4033] dark:text-[#d0c0b6] bg-[#f4ebe7] dark:bg-white/5 px-2 py-1 rounded-lg">#考研</span>
+<span class="text-[10px] font-medium text-[#5e4033] dark:text-[#d0c0b6] bg-[#f4ebe7] dark:bg-white/5 px-2 py-1 rounded-lg">#研一</span>
+</div>
+<p class="text-sm text-[#5e4033] dark:text-[#a08d84] line-clamp-2 leading-relaxed">寻找一起刷题的小伙伴，每天早8晚10，互相监督！</p>
+</div>
+</div>
+<div class="h-24"></div>
+</div>
+</div>
+<div class="absolute bottom-10 left-0 w-full flex justify-center pointer-events-none z-30">
+<a href="study_session.html" class="pointer-events-auto group bg-primary hover:bg-[#ff9e66] text-[#1c120d] transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/30 h-16 pl-8 pr-10 rounded-full flex items-center gap-4 border-4 border-white dark:border-[#23160f]">
+<span class="material-symbols-outlined text-[32px] group-hover:animate-pulse">play_circle</span>
+<div class="flex flex-col items-start">
+<span class="font-display font-bold text-xl leading-tight">开始专注</span>
+<span class="text-xs opacity-70 font-medium">Start Focus</span>
+</div>
+</a>
+</div>
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-orange-200/10 dark:bg-orange-900/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.study-buddy-card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove selected class from all other cards
+                cards.forEach(c => {
+                    if (c !== card) {
+                        c.classList.remove('selected');
+                    }
+                });
+                // Toggle selected class on the clicked card
+                card.classList.toggle('selected');
+            });
+        });
+    });
+</script>
+</body>
+</html>

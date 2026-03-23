@@ -1,0 +1,103 @@
+<!-- 微信扫码登录页界面预览 -->
+<!-- 登录页面 (桌面端) - 微信登录界面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudyWithMe - 微信扫码登录</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                brand: {
+                  primary: '#F98C53',
+                  accent: '#FCCEB4',
+                  bg: '#F9F2EF',
+                }
+              },
+              fontFamily: {
+                sans: ['Noto Sans SC', 'Source Han Sans CN', 'sans-serif'],
+              },
+              borderRadius: {
+                '4xl': '2rem',
+              }
+            }
+          }
+        }
+    </script>
+<style data-purpose="custom-layout">
+        body {
+            background-color: #F9F2EF;
+            font-family: "Noto Sans SC", "Source Han Sans CN", sans-serif
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.8)
+        }
+        .study-illustration {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCitDyQQwP2cGsfcHL_u4mOh7hRepQvOXH0AJPT12qncVLTzdnz-tQy0C7QWL12MV6btgns7y-3PeGNyqKFyHJjKly8eCut6_gB5AhcdI2_kiOYwfWI4G2q1ZmtRxpF5JalnOHD6pzaEY3OMaVQ-0fcpBseMGmcD3g5y7YQkTrQxOteZoJqeoIoBBeFmUEOswyKBUQckUvBFDX8VOx3nr5AbwSdHmkx29pXepZVaLrSze9qVoctvyA4DOIC_pAji0nn0rjk4GUPRAcD);
+            background-size: cover;
+            background-position: center
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+<main class="w-full max-w-6xl h-[800px] flex overflow-hidden rounded-4xl shadow-2xl bg-white" data-purpose="login-container">
+<section class="hidden lg:flex lg:w-1/2 study-illustration relative overflow-hidden" data-purpose="visual-branding">
+<div class="absolute inset-0 bg-gradient-to-tr from-brand-accent/30 to-transparent"></div>
+<div class="absolute bottom-12 left-12 text-white drop-shadow-md">
+<h2 class="text-4xl font-bold mb-4">StudyWithMe</h2>
+<p class="text-xl opacity-90">在这里，静心学习，共同成长。</p>
+</div>
+</section>
+<section class="w-full lg:w-1/2 flex flex-col justify-center px-10 md:px-20 py-12 relative bg-white" data-purpose="form-content">
+<div class="mb-8 text-center lg:text-left">
+<h1 class="font-bold text-gray-800 mb-3 text-4xl">微信扫码登录</h1>
+<p class="text-gray-500 font-light text-lg">请使用微信扫描下方二维码即可登录 StudyWithMe。</p>
+</div>
+<div class="flex flex-col items-center space-y-8" data-purpose="wechat-qr-area">
+<div class="p-4 border-2 border-gray-100 rounded-2xl bg-white shadow-sm">
+<img alt="WeChat Login QR Code" class="w-[240px] h-[240px] rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo-dA4DPkAtS5PawL6_WKgoHHvnDF-IQczfyPzmnio94zDTvHkUUi0eNtqL-NcTTCSXPcX0eLOYx1K13sm9XVSXfLCXlN8Z1anxPTbiYECg4hF3OuFq9La46nTN33hEHbTWjHTbWobsVKNejDGb6MHCFZRg1O0TSzEsvSNd_SP3cpA4LsnId-UjxNttixWDrlPck3jOWO-ngUkgPwBVWX_y2POIP9Rtjj0vVObLO-Pv7UGAMpne_7Y2wfTD0OhmB-XyAyUb855MaxT"/>
+</div>
+<div class="w-full flex gap-4">
+<button class="flex-1 bg-brand-primary hover:bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-brand-primary/20 transition-all transform active:scale-[0.98] text-lg py-4 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined">refresh</span>
+                        刷新二维码
+                    </button>
+<button class="flex-1 border-2 border-brand-primary text-brand-primary hover:bg-brand-accent/20 font-bold rounded-xl transition-all transform active:scale-[0.98] text-lg py-4 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined">help</span>
+                        遇到问题？
+                    </button>
+</div>
+</div>
+<div class="mt-12 mb-8 relative" data-purpose="divider">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-100"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-white text-gray-400">其他登录方式</span>
+</div>
+</div>
+<div class="flex justify-center" data-purpose="other-login-actions">
+<a href="index.html" class="group flex flex-col items-center gap-2 transition-all hover:-translate-y-1">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-brand-accent/20 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<span class="text-xs text-gray-500">手机号登录</span>
+</a>
+</div>
+<p class="absolute bottom-8 left-0 right-0 text-center text-[10px] text-gray-400">
+                登录即代表您同意 <a class="underline hover:text-brand-primary" href="#">服务协议</a> 和 <a class="underline hover:text-brand-primary" href="#">隐私政策</a>
+</p>
+</section>
+</main>
+</body>
+</html>

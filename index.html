@@ -1,0 +1,127 @@
+<!-- 密码登录界面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudyWithMe - 密码登录</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#F98C53',
+              accent: '#FCCEB4',
+              bg: '#F9F2EF',
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans SC', 'Source Han Sans CN', 'sans-serif'],
+          },
+          borderRadius: {
+            '4xl': '2rem',
+          }
+        }
+      }
+    }
+</script>
+<style>
+    body {
+        background-color: #F9F2EF;
+        font-family: "Noto Sans SC", "Source Han Sans CN", sans-serif;
+    }
+    .study-illustration {
+        background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCitDyQQwP2cGsfcHL_u4mOh7hRepQvOXH0AJPT12qncVLTzdnz-tQy0C7QWL12MV6btgns7y-3PeGNyqKFyHJjKly8eCut6_gB5AhcdI2_kiOYwfWI4G2q1ZmtRxpF5JalnOHD6pzaEY3OMaVQ-0fcpBseMGmcD3g5y7YQkTrQxOteZoJqeoIoBBeFmUEOswyKBUQckUvBFDX8VOx3nr5AbwSdHmkx29pXepZVaLrSze9qVoctvyA4DOIC_pAji0nn0rjk4GUPRAcD);
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+<main class="w-full max-w-6xl h-[800px] flex overflow-hidden rounded-4xl shadow-2xl bg-white">
+    <!-- 左侧背景图 -->
+    <section class="hidden lg:flex lg:w-1/2 study-illustration relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-tr from-brand-accent/30 to-transparent"></div>
+        <div class="absolute bottom-12 left-12 text-white drop-shadow-md">
+            <h2 class="text-4xl font-bold mb-4">StudyWithMe</h2>
+            <p class="text-xl opacity-90">在这里，静心学习，共同成长。</p>
+        </div>
+    </section>
+
+    <!-- 右侧密码登录表单 -->
+    <section class="w-full lg:w-1/2 flex flex-col justify-center px-10 md:px-20 py-12 bg-white">
+        <div class="mb-10 text-center lg:text-left">
+            <h1 class="font-bold text-gray-800 mb-3 text-4xl">欢迎回来</h1>
+            <p class="text-gray-500 font-light text-lg">与志同道合的小伙伴一起专注学习</p>
+        </div>
+
+        <form class="space-y-6" onsubmit="window.location.href='match_home.html'; return false;">
+            <div class="space-y-2">
+                <div class="flex gap-2 text-sm mb-1">
+                    <a class="text-brand-primary font-medium" href="#">密码登录</a>
+                    <span class="text-gray-300">|</span>
+                    <a class="text-gray-500 hover:text-brand-primary" href="login_captcha.html">验证码登录</a>
+                </div>
+                <label class="text-base font-medium text-gray-600 block">手机号码</label>
+                <input id="phoneInput" class="w-full px-4 rounded-xl border-gray-200 focus:border-brand-primary focus:ring-brand-primary bg-gray-50/50 text-lg py-4"
+                       placeholder="请输入手机号" type="tel"/>
+            </div>
+
+            <div class="space-y-2">
+                <label class="text-base font-medium text-gray-600 block">密码</label>
+                <input id="passwordInput" class="w-full px-4 rounded-xl border-gray-200 focus:border-brand-primary focus:ring-brand-primary bg-gray-50/50 text-lg py-4"
+                       placeholder="请输入密码" type="password"/>
+            </div>
+
+            <div class="flex justify-between text-sm">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="w-4 h-4 rounded text-brand-primary focus:ring-brand-primary"/>
+                    <span class="text-gray-600">记住我</span>
+                </label>
+                <a class="text-brand-primary hover:underline" href="#">忘记密码？</a>
+            </div>
+
+            <div class="flex gap-4 mt-6">
+                <button class="flex-1 bg-brand-primary hover:bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-brand-primary/20 transition-all text-lg py-4"
+                        type="submit">
+                    立即登录
+                </button>
+                <a href="register.html" class="flex-1 text-center border-2 border-brand-primary text-brand-primary hover:bg-brand-accent/20 font-bold rounded-xl text-lg py-4">
+                    立即注册
+                </a>
+            </div>
+        </form>
+
+        <!-- 分隔线 -->
+        <div class="mt-12 mb-8 relative">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-100"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+                <span class="px-4 bg-white text-gray-400">其他登录方式</span>
+            </div>
+        </div>
+
+        <!-- 微信登录 -->
+        <div class="flex justify-center">
+             <a href="login_wechat.html" class="group flex flex-col items-center gap-2 hover:-translate-y-1 transition-all">
+                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-emerald-50 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M8.381 12.001l-.226.001c-3.155 0-5.714-2.193-5.714-4.898 0-2.704 2.559-4.897 5.714-4.897 3.155 0 5.714 2.193 5.714 4.897 0 1.341-.628 2.559-1.656 3.444l.322 1.397-1.488-.755c-.822.259-1.724.411-2.67.411zm11.472 6.531l-1.272-.647.275 1.196c-.879.757-1.417 1.8-1.417 2.949 0 2.318 2.193 4.198 4.898 4.198.811 0 1.581-.132 2.285-.353l1.276.647-.276-1.197c.88-.757 1.418-1.799 1.418-2.948 0-2.319-2.193-4.198-4.898-4.198-.81 0-1.58.132-2.285.353h-.004zM16.147 13.84c-3.682 0-6.666 2.558-6.666 5.714 0 3.156 2.984 5.714 6.666 5.714 1.104 0 2.155-.23 3.111-.643l2.038 1.036-.441-1.912c1.399-1.218 2.258-2.923 2.258-4.819 0-3.156-2.984-5.714-6.666-5.714z"></path>
+                    </svg>
+                </div>
+                <span class="text-xs text-gray-500">微信登录</span>
+            </a>
+        </div>
+
+        <!-- 底部协议 -->
+        <p class="absolute bottom-8 left-0 right-0 text-center text-[10px] text-gray-400">
+            登录即代表您同意 <a class="underline hover:text-brand-primary" href="#">服务协议</a> 和 <a class="underline hover:text-brand-primary" href="#">隐私政策</a>
+        </p>
+    </section>
+</main>
+</body>
+</html>
