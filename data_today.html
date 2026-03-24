@@ -120,7 +120,8 @@
 </nav>
 <div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
 <div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
-<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMMyjyCI8Rxuc3OEVMVuCWgUCFYbln3_3EV42h34YVeUGtXD17b8xO20SKcqrJjyNsTn6d5-M3-BS-v_WxJuegRMjktkN5lUFpnHEeb_iNXY3DjkPaW8TthcspfXA0XWsJaRpdGn0lsrCwletZYxymJMJ5eFgc3exQ-s4whz3qscaKDLxBTD7FKvBZOTYSPqMQYqqYNO4DkZKexaHn_HH3y-f0uywolL7HBcbdYrwtmuZmAeWZysM8rXopFQOuO9rkRV4IwrrVnuw')"></div>
+<!-- 已替换为本地头像 -->
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('./dist/assets/image/left_user.png')"></div>
 <div class="overflow-hidden">
 <p class="text-sm font-bold truncate">Alex Chen</p>
 <p class="text-xs text-[#9d6648]">专注时长: 42h</p>
@@ -132,7 +133,7 @@
 <main class="flex-1 p-12 overflow-y-auto">
 <header class="flex justify-between items-end mb-12">
     <div>
-        <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">我的学习数据</h1>
+        <h1 class="text-3xl font-bold text-gray-800 dark:white mb-4">我的学习数据</h1>
         <div class="inline-flex items-center bg-white dark:bg-surface-dark p-2 rounded-full shadow-sm mb-3">
             <a href="data_today.html" class="px-6 py-2 text-sm font-semibold text-white bg-primary rounded-full">本日</a>
             <a href="data_week.html" class="px-6 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 hover:text-primary">本周</a>
@@ -225,103 +226,4 @@
 <div class="w-2 h-8 bg-[#FFB38A] rounded-full"></div>
 <span class="text-lg font-medium text-brand-text">英语：托福词汇背诵 100个</span>
 </div>
-<span class="text-[#FFB38A] font-bold">100%</span>
-</div>
-<div class="w-full bg-orange-50 h-3 rounded-full overflow-hidden">
-<div class="bg-[#FFB38A] h-full rounded-full" style="width: 100%;"></div>
-</div>
-<div class="flex mt-2 text-xs text-brand-subtle space-x-4">
-<span class="text-green-500">已提前达成</span>
-<span>总计消耗 45min</span>
-</div>
-</div>
-
-<div class="group">
-<div class="flex justify-between items-center mb-3">
-<div class="flex items-center space-x-3">
-<div class="w-2 h-8 bg-[#FFE0D1] rounded-full"></div>
-<span class="text-lg font-medium text-brand-text">专业课：视频精读</span>
-</div>
-<span class="text-brand-subtle font-bold">20%</span>
-</div>
-<div class="w-full bg-orange-50 h-3 rounded-full overflow-hidden">
-<div class="bg-[#FFE0D1] h-full rounded-full" style="width: 20%;"></div>
-</div>
-<div class="flex mt-2 text-xs text-brand-subtle">
-<span>进行中 · 剩余 150min</span>
-</div>
-</div>
-
-<div class="group">
-<div class="flex justify-between items-center mb-3">
-<div class="flex items-center space-x-3">
-<div class="w-2 h-8 bg-gray-200 rounded-full"></div>
-<span class="text-lg font-medium text-brand-text">晚间复盘</span>
-</div>
-<span class="text-brand-subtle font-bold">0%</span>
-</div>
-<div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
-<div class="bg-gray-200 h-full rounded-full" style="width: 0%;"></div>
-</div>
-<div class="flex mt-2 text-xs text-brand-subtle">
-<span>待开始 · 22:00</span>
-</div>
-</div>
-</div>
-
-<div class="mt-12 p-6 bg-gradient-to-r from-orange-50 to-orange-100/30 rounded-2xl border border-orange-100">
-<div class="flex items-center">
-<div class="p-3 bg-white rounded-xl shadow-sm mr-4">
-<svg class="h-6 w-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-</div>
-<div>
-<h4 class="font-bold text-brand-text">继续加油！</h4>
-<p class="text-sm text-brand-subtle">今日专注时间已超过全球 88% 的学习者。</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-
-<canvas class="fixed top-0 left-0 w-full h-full -z-10 opacity-20 pointer-events-none" data-purpose="background-decoration" id="subtle-background"></canvas>
-<script data-purpose="background-canvas-logic">
-    const bgCanvas = document.getElementById('subtle-background');
-    const bgCtx = bgCanvas.getContext('2d');
-    function resize() {
-      bgCanvas.width = window.innerWidth;
-      bgCanvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-    const particles = [];
-    for(let i=0; i<15; i++) {
-      particles.push({
-        x: Math.random() * bgCanvas.width,
-        y: Math.random() * bgCanvas.height,
-        r: Math.random() * 50 + 20,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-      });
-    }
-    function animate() {
-      bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-      bgCtx.fillStyle = '#F98C53';
-      particles.forEach(p => {
-        bgCtx.beginPath();
-        bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        bgCtx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if(p.x < -p.r) p.x = bgCanvas.width + p.r;
-        if(p.x > bgCanvas.width + p.r) p.x = -p.r;
-        if(p.y < -p.r) p.y = bgCanvas.height + p.r;
-        if(p.y > bgCanvas.height + p.r) p.y = -p.r;
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-  </script>
-</body>
-</html>
+<span class="text-[#FFB38

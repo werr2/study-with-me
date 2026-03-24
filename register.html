@@ -39,25 +39,8 @@
         background-position: center;
     }
 </style>
+  <script type="module" crossorigin src="/assets/register-Beejk0GP.js"></script>
 </head>
-<script type="module">
-    // 1. 引入你写的逻辑函数
-    import { signUp } from './src/ai-logic.ts';
-
-    // 2. 绑定点击事件
-    document.getElementById('registerBtn').addEventListener('click', async () => {
-        const phone = document.getElementById('phoneInput').value;
-        const password = document.getElementById('passwordInput').value;
-
-        if (!phone || !password) {
-            alert('请填写完整信息');
-            return;
-        }
-
-        // 3. 执行注册
-        await signUp(phone, password);
-    });
-</script>
 <body class="min-h-screen flex items-center justify-center p-4">
 <main class="w-full max-w-6xl h-[800px] flex overflow-hidden rounded-4xl shadow-2xl bg-white">
     <!-- 左侧大图 -->

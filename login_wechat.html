@@ -29,6 +29,27 @@
             }
           }
         }
+        
+        // 生成随机字符串
+        function generateRandomString() {
+            return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        }
+        
+        // 生成新二维码
+        function generateNewQRCode() {
+            const qrImage = document.getElementById('qr-code-image');
+            const randomStr = generateRandomString();
+            // 使用免费API生成二维码，内容为随机字符串
+            qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${randomStr}`;
+        }
+        
+        // 页面加载时生成初始二维码
+        window.onload = function() {
+            generateNewQRCode();
+            
+            // 为刷新按钮添加点击事件
+            document.getElementById('refresh-btn').addEventListener('click', generateNewQRCode);
+        };
     </script>
 <style data-purpose="custom-layout">
         body {
@@ -65,10 +86,12 @@
 </div>
 <div class="flex flex-col items-center space-y-8" data-purpose="wechat-qr-area">
 <div class="p-4 border-2 border-gray-100 rounded-2xl bg-white shadow-sm">
-<img alt="WeChat Login QR Code" class="w-[240px] h-[240px] rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo-dA4DPkAtS5PawL6_WKgoHHvnDF-IQczfyPzmnio94zDTvHkUUi0eNtqL-NcTTCSXPcX0eLOYx1K13sm9XVSXfLCXlN8Z1anxPTbiYECg4hF3OuFq9La46nTN33hEHbTWjHTbWobsVKNejDGb6MHCFZRg1O0TSzEsvSNd_SP3cpA4LsnId-UjxNttixWDrlPck3jOWO-ngUkgPwBVWX_y2POIP9Rtjj0vVObLO-Pv7UGAMpne_7Y2wfTD0OhmB-XyAyUb855MaxT"/>
+<!-- 修改：添加id给二维码图片 -->
+<img alt="WeChat Login QR Code" id="qr-code-image" class="w-[240px] h-[240px] rounded-lg" src="">
 </div>
 <div class="w-full flex gap-4">
-<button class="flex-1 bg-brand-primary hover:bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-brand-primary/20 transition-all transform active:scale-[0.98] text-lg py-4 flex items-center justify-center gap-2" type="button">
+<!-- 修改：添加id给刷新按钮 -->
+<button id="refresh-btn" class="flex-1 bg-brand-primary hover:bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-brand-primary/20 transition-all transform active:scale-[0.98] text-lg py-4 flex items-center justify-center gap-2" type="button">
 <span class="material-symbols-outlined">refresh</span>
                         刷新二维码
                     </button>
