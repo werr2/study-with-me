@@ -119,17 +119,17 @@
 </div>
 </div>
 <div class="flex items-baseline gap-2 mb-8">
-<span class="text-7xl font-display font-black text-slate-900 dark:text-slate-100">25</span>
+<span id="minutes" class="text-7xl font-display font-black text-slate-900 dark:text-slate-100">25</span>
 <span class="text-3xl font-display font-medium text-slate-400">:</span>
-<span class="text-7xl font-display font-black text-slate-900 dark:text-slate-100">00</span>
+<span id="seconds" class="text-7xl font-display font-black text-slate-900 dark:text-slate-100">00</span>
 </div>
 <div class="flex gap-3 mb-8">
-<button class="px-4 py-2 rounded-xl bg-surface-light dark:bg-slate-800 text-sm hover:bg-primary/20 transition-colors">15 min</button>
-<button class="px-4 py-2 rounded-xl bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">25 min</button>
-<button class="px-4 py-2 rounded-xl bg-surface-light dark:bg-slate-800 text-sm hover:bg-primary/20 transition-colors">45 min</button>
-<button class="px-4 py-2 rounded-xl bg-surface-light dark:bg-slate-800 text-sm hover:bg-primary/20 transition-colors">60 min</button>
+<button data-time="15" class="px-4 py-2 rounded-xl bg-surface-light dark:bg-slate-800 text-sm hover:bg-primary/20 transition-colors">15 min</button>
+<button data-time="25" class="px-4 py-2 rounded-xl bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">25 min</button>
+<button data-time="45" class="px-4 py-2 rounded-xl bg-surface-light dark:bg-slate-800 text-sm hover:bg-primary/20 transition-colors">45 min</button>
+<button data-time="60" class="px-4 py-2 rounded-xl bg-surface-light dark:bg-slate-800 text-sm hover:bg-primary/20 transition-colors">60 min</button>
 </div>
-<button class="w-full max-w-sm py-4 bg-primary text-white rounded-xl font-bold text-lg shadow-xl shadow-primary/30 active:scale-95 transition-transform">
+<button id="start-button" class="w-full max-w-sm py-4 bg-primary text-white rounded-xl font-bold text-lg shadow-xl shadow-primary/30 active:scale-95 transition-transform">
 开始专注
 </button>
 </section>
@@ -242,5 +242,77 @@
 </section>
 </div>
 </main>
+<script>
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const startButton = document.getElementById('start-button');
+    const durationButtons = document.querySelectorAll('[data-time]');
+
+    let timer;
+    let totalSeconds = 25 * 60; // Default to 25 minutes
+    let isRunning = false;
+
+    function setTime(minutes) {
+        if (isRunning) return;
+        totalSeconds = minutes * 60;
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    function toggleTimer() {
+        if (isRunning) {
+            clearInterval(timer);
+            isRunning = false;
+            startButton.textContent = '开始专注';
+            durationButtons.forEach(button => button.disabled = false);
+        } else {
+            if (totalSeconds > 0) {
+                isRunning = true;
+                startButton.textContent = '停止';
+                durationButtons.forEach(button => button.disabled = true);
+                timer = setInterval(() => {
+                    if (totalSeconds <= 0) {
+                        clearInterval(timer);
+                        isRunning = false;
+                        startButton.textContent = '开始专注';
+                        durationButtons.forEach(button => button.disabled = false);
+                        // Optionally reset to a default time
+                        setTime(25); 
+                        alert('专注时间到！');
+                        return;
+                    }
+                    totalSeconds--;
+                    updateDisplay();
+                }, 1000);
+            }
+        }
+    }
+
+    durationButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const minutes = parseInt(button.dataset.time, 10);
+            setTime(minutes);
+
+            // Update active button style
+            durationButtons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/20');
+                btn.classList.add('bg-surface-light', 'dark:bg-slate-800');
+            });
+            button.classList.add('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/20');
+            button.classList.remove('bg-surface-light', 'dark:bg-slate-800');
+        });
+    });
+
+    startButton.addEventListener('click', toggleTimer);
+
+    // Initial display update
+    updateDisplay();
+</script>
 </body>
 </html>
