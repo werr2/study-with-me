@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>StudyWithMe - 学伴沟通中心</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400,500,700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -107,7 +107,7 @@
 </nav>
 <div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
 <div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
-<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('./dist/assets/image/left_user.png')"></div>
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('/assets/image/left_user.png')"></div>
 <div class="overflow-hidden">
 <p class="text-sm font-bold truncate">Alex Chen</p>
 <p class="text-xs text-[#9d6648]">专注时长: 42h</p>
@@ -144,7 +144,7 @@
 <!-- Professor Sarah (Active) -->
 <div class="flex items-center gap-3 p-3 rounded-2xl bg-white dark:bg-surface-dark shadow-sm border border-border-light dark:border-border-dark cursor-pointer transition-all">
 <div class="relative shrink-0">
-<div class="w-12 h-12 rounded-full bg-center bg-cover border-2 border-white dark:border-surface-dark shadow-sm" style='background-image: url("./dist/assets/image/sala_professor.png");'></div>
+<div class="w-12 h-12 rounded-full bg-center bg-cover border-2 border-white dark:border-surface-dark shadow-sm" style='background-image: url("/assets/image/sala_professor.png");'></div>
 <div class="absolute bottom-0.5 right-0.5 h-3 w-3 bg-green-500 rounded-full border-2 border-white dark:border-surface-dark"></div>
 </div>
 <div class="flex-1 min-w-0">
@@ -163,7 +163,7 @@
 
 <div class="flex items-center gap-3 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-all group">
 <div class="relative shrink-0">
-<div class="w-12 h-12 rounded-full bg-center bg-cover" style='background-image: url("./dist/assets/image/liming.png");'></div>
+<div class="w-12 h-12 rounded-full bg-center bg-cover" style='background-image: url("/assets/image/liming.png");'></div>
 </div>
 <div class="flex-1 min-w-0">
 <div class="flex justify-between items-baseline mb-0.5">
@@ -189,7 +189,7 @@
 
 <div class="flex items-center gap-3 p-3 rounded-2xl hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-all group">
 <div class="relative shrink-0">
-<div class="w-12 h-12 rounded-full bg-center bg-cover" style='background-image: url("./dist/assets/image/zhang_teacher.png");'></div>
+<div class="w-12 h-12 rounded-full bg-center bg-cover" style='background-image: url("/assets/image/zhang_teacher.png");'></div>
 </div>
 <div class="flex-1 min-w-0">
 <div class="flex justify-between items-baseline mb-0.5">
@@ -210,7 +210,7 @@
 <span class="material-symbols-outlined">menu</span>
 </button>
 <div class="relative">
-<div class="bg-center bg-no-repeat bg-cover rounded-full h-11 w-11 ring-2 ring-white dark:ring-surface-dark shadow-sm" data-alt="Portrait of Professor Sarah" style='background-image: url("./dist/assets/image/sala_professor.png");'></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-11 w-11 ring-2 ring-white dark:ring-surface-dark shadow-sm" data-alt="Portrait of Professor Sarah" style='background-image: url("/assets/image/sala_professor.png");'></div>
 <div class="absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-white dark:border-surface-dark"></div>
 </div>
 <div class="flex flex-col">
@@ -239,7 +239,7 @@
 </div>
 
 <div class="flex items-start gap-4 max-w-2xl">
-<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="Miniature portrait of Professor Sarah" style='background-image: url("./dist/assets/image/sala_professor.png");'></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="Miniature portrait of Professor Sarah" style='background-image: url("/assets/image/sala_professor.png");'></div>
 <div class="flex flex-col gap-1.5 items-start">
 <p class="text-text-secondary dark:text-gray-400 text-xs font-bold ml-1 tracking-wide">莎拉教授</p>
 <div class="p-5 rounded-3xl rounded-tl-none bg-surface-light dark:bg-surface-dark shadow-sm border border-transparent dark:border-border-dark text-text-main dark:text-gray-100 text-[15px] leading-relaxed">
@@ -258,11 +258,11 @@
 <span class="material-symbols-outlined text-[16px] text-text-secondary opacity-60">done_all</span>
 </div>
 </div>
-<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="User profile picture" style="background-image: url('./dist/assets/image/left_user.png')"></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="User profile picture" style="background-image: url('/assets/image/left_user.png')"></div>
 </div>
 
 <div class="flex items-start gap-4 max-w-2xl">
-<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="Miniature portrait of Professor Sarah" style='background-image: url("./dist/assets/image/sala_professor.png");'></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="Miniature portrait of Professor Sarah" style='background-image: url("/assets/image/sala_professor.png");'></div>
 <div class="flex flex-col gap-2 items-start">
 <p class="text-text-secondary dark:text-gray-400 text-xs font-bold ml-1 tracking-wide">莎拉教授</p>
 <div class="p-5 rounded-3xl rounded-tl-none bg-surface-light dark:bg-surface-dark shadow-sm border border-transparent dark:border-border-dark text-text-main dark:text-gray-100 text-[15px] leading-relaxed">
@@ -289,7 +289,7 @@
                         谢谢教授！我现在就下载。
                     </div>
 </div>
-<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="User profile picture" style="background-image: url('./dist/assets/image/left_user.png')"></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 shrink-0 mt-1 shadow-sm" data-alt="User profile picture" style="background-image: url('/assets/image/left_user.png')"></div>
 </div>
 </div>
 

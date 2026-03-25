@@ -20,7 +20,6 @@
                         "background-dark": "#23160f",
                         "warm-canvas": "#F9F2EF",
                         "surface-dark": "#2c201a",
-                        // Original page colors
                         'healing-bg': '#F9F2EF',
                         'primary-orange': '#F98C53',
                         'soft-gray': '#A0A0A0',
@@ -58,7 +57,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #d4bbae;
         }
-        /* Original Page Styles */
         .glass-card {
           background: rgba(255, 255, 255, 0.9);
           border-radius: 24px;
@@ -99,8 +97,7 @@
 </nav>
 <div class="p-4 border-t border-[#e9d7ce] dark:border-[#3a261c] mb-2">
 <div class="flex items-center gap-3 px-4 cursor-pointer hover:opacity-80 transition-opacity">
-<!-- 已替换为本地头像 -->
-<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('./dist/assets/image/left_user.png')"></div>
+<div class="w-10 h-10 rounded-full bg-cover bg-center ring-2 ring-white dark:ring-[#23160f] shadow-sm" style="background-image: url('/assets/image/left_user.png')"></div>
 <div class="overflow-hidden">
 <p class="text-sm font-bold truncate">Alex Chen</p>
 <p class="text-xs text-[#9d6648]">专注时长: 42h</p>
@@ -108,6 +105,7 @@
 </div>
 </div>
 </aside>
+
 <main class="flex-1 p-12 overflow-y-auto" data-purpose="main-dashboard">
   <header class="flex justify-between items-end mb-12">
     <div>
@@ -123,7 +121,8 @@
         <button class="px-6 py-3 bg-white text-primary-orange font-semibold rounded-2xl shadow-sm hover:shadow-md transition-all border border-orange-100">导出数据</button>
         <button class="px-6 py-3 bg-primary-orange text-white font-semibold rounded-2xl shadow-lg shadow-orange-200 hover:scale-105 transition-all">添加记录</button>
     </div>
-</header>
+  </header>
+
 <div class="grid grid-cols-12 gap-8">
 <div class="col-span-8 flex flex-col gap-8">
 <div class="glass-card p-8 flex items-center justify-between" data-purpose="summary-card">
@@ -148,6 +147,7 @@
 <span class="text-2xl font-bold text-gray-700">Top 5%</span>
 </div>
 </div>
+
 <div class="glass-card p-8 flex-1" data-purpose="chart-container">
 <div class="flex justify-between items-center mb-6">
 <h3 class="text-xl font-bold text-gray-800">学习趋势</h3>
@@ -165,6 +165,7 @@
 </div>
 </div>
 </div>
+
 <div class="col-span-4 flex flex-col gap-8">
 <div class="glass-card p-8 h-full" data-purpose="okr-section">
 <h3 class="text-xl font-bold text-gray-800 mb-8">本周进度</h3>
@@ -223,6 +224,7 @@
 </div>
 </div>
 </main>
+
 <script data-purpose="chart-setup">
     const ctx = document.getElementById('weeklyChart').getContext('2d');
     const gradient = ctx.createLinearGradient(0, 0, 0, 300);
@@ -310,6 +312,7 @@
       }
     });
 </script>
+
 <canvas class="fixed top-0 left-0 w-full h-full -z-10 opacity-20 pointer-events-none" data-purpose="background-decoration" id="subtle-background"></canvas>
 <script data-purpose="background-canvas-logic">
     const bgCanvas = document.getElementById('subtle-background');
